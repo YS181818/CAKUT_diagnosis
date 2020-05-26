@@ -1,4 +1,4 @@
-"""Training a new (256 channel) model on the kidney dataset."""
+"""Training instance-level classification model on the kidney dataset."""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
