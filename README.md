@@ -4,17 +4,17 @@ This is an implementation of the proposed model in TensorFlow for classification
 
 Model Description：
 ------
-we adopt the transfer learning to finetune a deep learning classification network based on a pre-trained VGG16 model for learning discriminative features from individual 2D ultrasound images and estimating instance-level classification scores.
+We adopt the transfer learning to finetune a deep learning classification network based on a pre-trained VGG16 model for learning discriminative features from individual 2D ultrasound images and estimating instance-level classification scores.
 Then, a mean pooling operator is adopted to fuse the multiple instance-level classification scores for generating an overall (bag-level) classification score for each subject.
 
 
 For more details on the underlying model please refer to the following paper:
 -------
-@article{yin2020Multiinstance,
-title={Multi-instance deep learning of ultrasound imaging data for pattern classification of congenital abnormalities of the kidney and urinary tract in children},
-author={Shi Yin, Qinmu Peng, Hongming Li, Zhengqiang Zhang, Xinge You, Katherine Fischer, Susan L. Furth, Yong Fan, Gregory E. Tasian},
-journal={Urology},
-year={2020}}
+@article{yin2020Multiinstance,<br>
+title={Multi-instance deep learning of ultrasound imaging data for pattern classification of congenital abnormalities of the kidney and urinary tract in children},<br>
+author={Shi Yin, Qinmu Peng, Hongming Li, Zhengqiang Zhang, Xinge You, Katherine Fischer, Susan L. Furth, Yong Fan, Gregory E. Tasian},<br>
+journal={Urology},<br>
+year={2020}}<br>
 
 Requirements：
 --------
