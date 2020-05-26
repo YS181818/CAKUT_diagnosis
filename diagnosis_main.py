@@ -14,43 +14,22 @@ import numpy as np
 import time
 import scipy.io as sio
 
-
-_DEFAULT_IMAGE_SIZE = 224
-_NUM_CHANNELS = 3
+### Training parameters setting
 _NUM_CLASSES = 2
 batch_size = 5
-_NUM_IMAGES = {
-    'train': 5,
-    'validation': 5,
-}
-
-_NUM_TRAIN_FILES = 1024
-_SHUFFLE_BUFFER = 10000
 INPUT_SIZE = (321,425)
 Base_Rate = 1e-5
 NUM_STEPS=100001
-#NUM_STEPS=2
 
+## path setting
 DATASET_NAME = 'Kidney'
-TRAIN_LIST_PATH = './dataset/list_225/5fold_212_88/5times/train_imageS.txt' #import train data list
-TEST_LIST_PATH = './dataset/list_225/5fold_212_88/5times/test_imageS.txt' #import validation data list
-IMAGE_PATH = './dataset/crop_data225/' ## image path 
-model_save = './result/5times/local_fullimage_256_S_88/' #model path 
+TRAIN_LIST_PATH = 'train_imageS.txt' #import train data list
+TEST_LIST_PATH = 'test_imageS.txt' #import validation data list
+IMAGE_PATH = './dataset/' ## image path 
+model_save = './model/' #model path 
 snapshot_dir = model_save+'snapshots/'
-pretrain_dir = '../../../../home/yinshi18/tmp/tensorflow-deeplab-lfov-master/util/VGG_16.npy'## pretrain model path
+pretrain_dir = 'VGG_16.npy'## pretrain model path
 
-def dice_mask(input_batch1, input_batch2):
-    input_1=tf.equal(input_batch1, 1.0, name=None)
-    print ("input_1:"+repr(input_1))
-    input_2=tf.equal(input_batch2, 1.0, name= None)
-    print ("input_2:"+repr(input_2))
-    accuracy_n=tf.logical_and(input_1, input_2,name=None)
-    input2_z=tf.cast(input_2, tf.int32)
-    input1_z=tf.cast(input_1, tf.int32)
-    accuracy_z=tf.cast(accuracy_n, tf.int32)
-    accuracy_n= 2*tf.reduce_sum(accuracy_z)/(tf.reduce_sum(input1_z)+tf.reduce_sum(input2_z))
-    print ("accuracy_mask:"+repr(accuracy_n))
-    return accuracy_n
      
 def save(saver, sess, logdir, step):
     model_name = 'model.ckpt'
