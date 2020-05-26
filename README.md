@@ -1,6 +1,6 @@
 Multi-instance deep learning of ultrasound imaging data for pattern classification of congenital abnormalities of the kidney and urinary tract in children-TensorFlow
 ===
-This is an implementation of the proposed model in TensorFlow for classification of congenital abnormalities of the kidney and urinary tract (CAKUT).
+This is an implementation of the proposed model in TensorFlow for instance-level classification of congenital abnormalities of the kidney and urinary tract (CAKUT).
 
 Model Description：
 ------
