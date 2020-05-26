@@ -1,4 +1,4 @@
-"""Runs a new (256 channel) model on the new 212 kidney dataset."""
+"""Training a new (256 channel) model on the kidney dataset."""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
